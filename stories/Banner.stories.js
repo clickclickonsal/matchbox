@@ -2,16 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
-import { StoryContainer } from './helpers';
+import StoryContainer from './helpers/StoryContainer';
 
-import { Banner, Icon } from '../src';
+import { Banner } from '@sparkpost/matchbox';
 
 const primaryAction = {
   content: 'Learn More',
   onClick: action('Learn More Clicked')
 };
 
-export default storiesOf('Banner', module)
+export default storiesOf('Feedback|Banner', module)
   .addDecorator((getStory) => (
     <StoryContainer>{ getStory() }</StoryContainer>
   ))

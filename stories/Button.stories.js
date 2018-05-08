@@ -2,19 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
-import { StoryContainer } from './helpers';
+import StoryContainer from './helpers/StoryContainer';
 
-import { Button } from '../src';
+import { Button } from '@sparkpost/matchbox';
 
-const sizeLabel = 'Size';
-const sizes = {
-  default: 'default',
-  small: 'small',
-  large: 'large'
-};
-const sizeDefault = 'default';
-
-export default storiesOf('Button', module)
+export default storiesOf('Action|Button', module)
   .addDecorator((getStory) => (
     <StoryContainer bg='white'>{ getStory() }</StoryContainer>
   ))

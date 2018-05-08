@@ -4,7 +4,9 @@ import { setOptions } from '@storybook/addon-options';
 
 setOptions({
   name: 'Matchbox',
-  url: 'https://github.com/SparkPost/matchbox/'
+  url: 'https://github.com/SparkPost/matchbox/',
+  hierarchySeparator: /\//,
+  hierarchyRootSeparator: /\|/,
   // goFullScreen: false,
   // showStoriesPanel: true,
   // showAddonPanel: true,
@@ -24,4 +26,5 @@ setDefaults({
   inline: true
 });
 
-storybook.configure(() => require('../stories/index.js'), module);
+const req = require.context('../stories', true, /\.stories\.js$/)
+storybook.configure(() => req.keys().forEach((filename) => req(filename)), module);
